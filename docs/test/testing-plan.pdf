@@ -1,0 +1,83 @@
+Testing Plan
+
+1. Correct number of cards should be dealt to each player, depending on number
+of players
+2. player should be able to draw card from either pile and the card should appear in their hand.
+3. Player should be able to play on excisting melds.
+  - card should be checked to see if it can be played
+    - if yes play card. add card to meld and remove card from hand
+    - if no do not do anything
+4. player can make meld
+  - cards should be checked if they can be played together
+    - if yes all cards selected should be added to the meld and the cards should be removed from the hand.
+    if no dont do anything
+5. Player discards cards. card should be removed from hand and added to discard pile
+
+
+Spencer Taylor:
+  complete unit testing on the CardModel
+    test the constructor, getrank and getSuit
+    test getRankName and getSuitName
+
+Bug: games crashes when input is char
+
+
+Game Controller constructor
+  mock view so game opening returns 2 players
+  create a mock deck
+  make sure correct number of cards dealt to players
+
+game Controller pickUpLogic
+  test if userselection is 1 that player gains a card and a card is erased from deck
+  test if userselection isnt 1 that player gains card and a card is taken from
+    discard and that discard flag = true
+
+GameController discardCheckLogic
+  test if discard flag is true that the function returns false
+  test if discard flag is false that the function returns true
+  test after the functions ran the discardflag is false
+
+GameController discardLogic
+  check that card is added to discard pile
+  check that card is removed from hand
+
+GameController meldAddLogic
+  check that cards is added to the meld
+  check that cards is removed from player hand
+  check returns true if card can be added to meld
+  check nothing happens and false returned if cant be added to meld
+
+GameController meldCreate
+  if meld can be created function returns true
+  the 3 cards are removed from the hand
+  the 3 cards are added to a meld and number of melds increased by 1
+  if meld cant be created function returns false
+  no cards removed or added and meld number remains the same.
+
+GameController checkSmallest
+  input 3 known numbers, make sure the smallest is returned
+
+GameController checklargest
+  input 3 known numbers, make sure the largest is returned
+
+GameController checkMiddle
+  input 3 known numbers, make sure the Middle is returned
+
+GameController endGameLogic
+  input a empty players hand and make sure returns true
+  input a non emepty player hand and make sure returns false
+
+GameController calculateScore
+
+
+GameController PlayerDeal
+  set players to 2 then check if both handsizes are 10.
+  set players to 3 then check if all hand sizes are 7.
+  set players to 4 then check if all hand sizes are 7.
+
+GameController sort
+  pass in a known hand then ensure that the smallest card is on the left
+
+GameController Game
+
+GameController playerTurn
